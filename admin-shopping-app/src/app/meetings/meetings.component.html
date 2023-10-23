@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <form [formGroup]="meetingRef">
+        <label>ClientName</label>
+        <input type="text" formControlName="clientName"><br/>
+        <label>MeetingDate</label>
+        <input type="text" formControlName="meetingDate"><br/>
+        <label>MeetingStart</label>
+        <input type="text" formControlName="meetingStart"><br/>
+        <label>MeetingEnd</label>
+        <input type="text" formControlName="meetingEnd"><br/>
+        <input type="submit" value="Store Meeting Details" class="btn btn-success"/>
+        <input type="reset" value="Discard Changes" class="btn btn-info"/>
+
+    </form>
+    <br/>
+    <table class="table">
+        <tr>
+            <th>ClientName</th>
+            <th>MeetingDate</th>
+            <th>MeetingStart</th>
+            <th>MeetingEnd</th>
+        </tr>
+        <tr *ngFor="let meeting of meetings">
+            <td>{{meeting.clientName}}</td>
+            <td>{{meeting.meetingDate}}</td>
+            <td>{{meeting.meetingStart}}</td>
+            <td>{{meeting.meetingEnd}}</td>
+            <td></td>
+        </tr>
+    </table>
+</div>

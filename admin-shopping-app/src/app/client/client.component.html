@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <form [formGroup]="clientRef">
+        <label>ClientName</label>
+        <input type="text" formControlName="clientName"><br/>
+        <label>ClientDescription</label>
+        <input type="text" formControlName="clientDescription"><br/>
+        <label>ClientImageUrl</label>
+        <input type="text" formControlName="clienImagetUrl"><br/>
+        <input type="submit" value="Store Client Details" class="btn btn-success"/>
+        <input type="reset" value="Discard Changes" class="btn btn-info"/>
+        </form>
+
+
+    <table class="table">
+        <tr>
+            <th>CID</th>
+            <th>ClientName</th>
+            <th>ClientDescription</th>
+            <th>ClientImageUrl</th>
+        </tr>
+        <tr *ngFor="let client of clients">
+            <td>{{client.id}}</td>
+            <td>{{client.clientName}}</td>
+            <td>{{client.clientDescription}}</td>
+            <!-- <td>{{client.clientImageUrl}}</td> -->
+            <td><img src={{client.clientImageUrl}} width="50px" height="50px"/></td>
+        </tr>
+    </table>
+</div>
